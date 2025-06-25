@@ -2,8 +2,10 @@
 import { getTaskById } from '@/app/actions/task';
 import React from 'react';
 
-const TaskDetail = async ({ params }: { params: { id: string } }) => {
-  const Task = await getTaskById(Number(params.id));
+const TaskDetail = async ({ params }: { params: { id: number } }) => {
+  const {id} = await params
+  const Task = await getTaskById(Number(id))
+
 
   return (
     <div className="p-6">
